@@ -1,0 +1,5 @@
+playwright>=1.62.0
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.0
+google-api-python-client>=2.150.0
+gspread>=6.1.0
