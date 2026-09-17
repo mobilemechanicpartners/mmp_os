@@ -70,3 +70,23 @@ python3 daily_sweep.py 1          # invoice exactly ONE ro — real send
 
 `daily_sweep.py` with no argument invoices everything that is ready. It sends
 real invoices to real customers, so treat it as a production action.
+
+## What is mirrored here
+
+Everything Gale runs in production is in this directory, verified byte-for-byte
+against `gale-server` by sha256:
+
+`config.py`, `daily_sweep.py`, `tekmetric.py`, `gmail_client.py`,
+`ro_tracker.py`, `state.py`, `gale_log.py`, `report.py`,
+`track_drivetime_confirmations.py`, `session_keepalive.py`, `gale_health.py`,
+`process_ro.py`, the two one-time setup scripts and `requirements.txt`.
+
+Not mirrored, deliberately: `credentials/`, `state/`, `logs/`, `downloads/`
+and `screenshots/` (secrets and runtime data, which live only on the VM), plus
+a few dev scratch files — `check_and_finalize.py` (only used in the unused
+draft-and-wait mode), `auto_login_save.py` (superseded by v2), `debug*.py`, and
+the Mac `.command` double-click shortcuts.
+
+`ops/patch_gale.py` in the repo root is the hardening patch that was applied to
+the live server on 2026-09-17. It is idempotent and kept as the record of what
+changed and why.
