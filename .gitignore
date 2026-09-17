@@ -1,0 +1,8 @@
+# Gale runtime state and secrets — these live only on gale-server.
+gale/credentials/
+gale/state/
+gale/logs/
+gale/downloads/
+gale/screenshots/
+__pycache__/
+*.pyc
